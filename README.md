@@ -1,1 +1,1 @@
-# phase2-react-project-Amazon-UCA5-broken-inventory-tracker
+# phase2-react-project-Meal-Planner-Assistant
