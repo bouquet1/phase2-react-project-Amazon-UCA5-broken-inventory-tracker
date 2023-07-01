@@ -1,8 +1,11 @@
 import React from 'react'
 
-function NavBar() {
+function NavBar({onChange}) {
   return (
-    <div>NavBar</div>
+    <nav>
+      <button onClick={() => onChange("PrepList")}>Meal Prep List</button>
+      <button onClick={() => onChange("ShoppingList")}>Shopping List</button>
+    </nav>
   )
 }
 
