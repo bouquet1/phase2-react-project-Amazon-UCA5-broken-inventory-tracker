@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import Navbar from './components/NavBar';
+import Navbar from './NavBar';
+import MealPrepList from './MealPrepList';
+import ShoppingList from './ShoppingList';
 
 
 function App() {
 const [page, setPage] = useState("PrepList");
 
   return (
-    <div className="App">
-    <Navbar onChange={setPage} />
+    <main>
+    <Navbar onChangePage={setPage} />
     {page === "PrepList" ? <MealPrepList /> : <ShoppingList /> }
-    </div>
+    </main>
   );
 }
 
