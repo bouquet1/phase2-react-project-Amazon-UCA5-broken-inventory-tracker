@@ -5,3 +5,5 @@ Meal Prep Asistant Backend Repo: https://github.com/bouquet1/meal-prep-backend
 
 npm install
 npm start
+
+handle the GET recipes - useState recipes to fetch the recipes

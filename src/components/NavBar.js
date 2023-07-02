@@ -1,10 +1,11 @@
 import React from 'react'
 
-function NavBar({onChange}) {
+function NavBar({onChangePage}) {
   return (
     <nav>
-      <button onClick={() => onChange("PrepList")}>Meal Prep List</button>
-      <button onClick={() => onChange("ShoppingList")}>Shopping List</button>
+      {/* sets the button to toggle between components */}
+      <button onClick={() => onChangePage("PrepList")}>Meal Prep List</button>
+      <button onClick={() => onChangePage("ShoppingList")}>Shopping List</button>
     </nav>
   )
 }
