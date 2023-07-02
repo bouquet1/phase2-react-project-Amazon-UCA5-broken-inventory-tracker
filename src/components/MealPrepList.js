@@ -1,10 +1,15 @@
 import React from 'react'
+import BreakfastItems from './BreakfastItems';
 
-function MealPrepList() {
+
+function MealPrepList({breakfasts, lunch, dinner}) {
+
+const breakfastRecipesMap = breakfasts.map(breakfast => <BreakfastItems key={breakfast.id} breakfast={breakfast} />)
+  
   return (
     <section>
         <h1>Meal Prep List</h1>
-        <ul></ul>
+        <ul>{breakfastRecipesMap}</ul>
     </section>
   )
 }

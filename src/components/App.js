@@ -6,34 +6,36 @@ import ShoppingList from './ShoppingList';
 
 function App() {
 const [page, setPage] = useState("PrepList");
-const [recipes, setRecipes] = useState([]);
+const [breakfasts, setBreakfast] = useState([]);
+const [lunch, setLunch] = useState([]);
+const [dinner, setDinner] = useState([]);
 
 //fetch req breakfast recipes
 useEffect(() => {
-  fetch("http://localhost:3000/breakfast")
+  fetch("http://localhost:3000/breakfasts")
   .then(r => r.json())
-  .then(breakfastRecipes =>{setRecipes(breakfastRecipes);console.log(breakfastRecipes)})
+  .then(breakfastRecipes =>{setBreakfast(breakfastRecipes);console.log(breakfastRecipes)})
 }, [])
 
 //fetch req lunch recipes
 useEffect(() => {
   fetch("http://localhost:3000/lunch")
   .then(r => r.json())
-  .then(lunchRecipes =>{setRecipes(lunchRecipes );console.log(lunchRecipes )})
+  .then(lunchRecipes =>{setLunch(lunchRecipes );console.log(lunchRecipes )})
 }, [])
 
 //fetch req dinner recipes
 useEffect(() => {
   fetch("http://localhost:3000/dinner")
   .then(r => r.json())
-  .then(dinnerRecipes =>{setRecipes(dinnerRecipes);console.log(dinnerRecipes)})
+  .then(dinnerRecipes =>{setDinner(dinnerRecipes);console.log(dinnerRecipes)})
 }, [])
 
 return (
     <main>
     {/* move between MealPrepList and ShoppingList comp when comp mounted */}
     <Navbar onChangePage={setPage} />
-    {page === "PrepList" ? <MealPrepList /> : <ShoppingList /> }
+    {page === "PrepList" ? <MealPrepList breakfasts={breakfasts} lunch={lunch} dinner={dinner} /> : <ShoppingList /> }
     </main>
 );
 }
