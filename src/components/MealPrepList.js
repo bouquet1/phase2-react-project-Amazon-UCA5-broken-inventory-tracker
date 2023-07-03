@@ -5,11 +5,15 @@ import LunchRecipes from './LunchRecipes';
 import DinnerRecipes from './DinnerRecipes';
 
 
-function MealPrepList({breakfasts, lunch, dinner}) {
+function MealPrepList({breakfasts, lunches, dinners}) {
+const [toggleMeal, setToggleMeal] = useState("breakfast")
 
 const breakfastRecipesMap = breakfasts.map(breakfast => <BreakfastRecipes key={breakfast.id} breakfast={breakfast} />)
 
-const [toggleMeal, setToggleMeal] = useState("breakfast")
+const lunchRecipesMap = lunches.map(lunch => <LunchRecipes key={lunch.id} lunch={lunch} />)
+
+const dinnerRecipesMap = dinners.map(dinner=> <DinnerRecipes key={dinner.id} dinner={dinner} />)
+
 
 const changeBetweenMels = ()  =>{
   if (toggleMeal=== "breakfast"){
@@ -29,6 +33,8 @@ const changeBetweenMels = ()  =>{
         {changeBetweenMels}
         </div>
         <ul>{breakfastRecipesMap}</ul>
+        <ul>{lunchRecipesMap}</ul>
+        <ul>{dinnerRecipesMap}</ul>
     </section>
   )
 }
