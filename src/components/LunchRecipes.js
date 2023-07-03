@@ -6,7 +6,7 @@ const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nu
 
   return (
     <section>
-        <h2>Lunch Recipes</h2>
+        {/* <h2>Lunch Recipes</h2> */}
         <image src={image} alt={name} />
         <h3>{name}</h3>
         <h4>{totalPrepTime}</h4>

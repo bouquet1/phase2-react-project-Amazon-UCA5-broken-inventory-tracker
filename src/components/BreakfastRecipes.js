@@ -7,7 +7,7 @@ function BreakfastRecipes({breakfast}) {
 
 return (
 <section>
-    <h2>Breakfast Recipes</h2>
+    {/* <h2>Breakfast Recipes</h2> */}
     <image src={image} alt={name} />
     <h3>{name}</h3>
     <h4>{totalPrepTime}</h4>
