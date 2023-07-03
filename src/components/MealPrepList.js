@@ -15,7 +15,7 @@ const lunchRecipesMap = lunches.map(lunch => <LunchRecipes key={lunch.id} lunch=
 const dinnerRecipesMap = dinners.map(dinner=> <DinnerRecipes key={dinner.id} dinner={dinner} />)
 
 
-const changeBetweenMels = ()  =>{
+const changeBetweenMeals = ()  =>{
   if (toggleMeal=== "breakfast"){
           return <BreakfastRecipes />
   } else if (toggleMeal === "lunch") {
@@ -30,7 +30,7 @@ const changeBetweenMels = ()  =>{
         <h1 className='mealPrep'>Meal Prep List</h1>
         <div>
         <MealsPrepNavbar onchangeMeal={setToggleMeal} />
-        {changeBetweenMels}
+        {changeBetweenMeals}
         </div>
         <ul>{breakfastRecipesMap}</ul>
         <ul>{lunchRecipesMap}</ul>
