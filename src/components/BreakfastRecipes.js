@@ -1,6 +1,7 @@
 import React from 'react'
+import { v4 as uuidv4} from 'uuid'
 
-function BreakfastItems({breakfast}) {
+function BreakfastRecipes({breakfast}) {
     const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nutritionFacts } = breakfast;
 
 return (
@@ -11,10 +12,11 @@ return (
     <h4>{totalPrepTime}</h4>
     <p>{directions1}</p>
     <p>{directions2}</p>
-    <li>{ingredients}</li>
+    {/* map through ingredients array ti list them */}
+    <li>{ingredients.map(ingredient =>  (<li key={uuidv4()}>{ingredient}</li>))}</li>
     <p>{nutritionFacts}</p>
 </section>
 )
 }
 
-export default BreakfastItems
+export default BreakfastRecipes;
