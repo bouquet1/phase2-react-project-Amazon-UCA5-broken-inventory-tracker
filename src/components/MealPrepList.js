@@ -5,24 +5,27 @@ import LunchRecipes from './LunchRecipes';
 import DinnerRecipes from './DinnerRecipes';
 
 
-function MealPrepList({breakfasts, lunches, dinners}) {
+function MealPrepList(breakfastRecipes) {
 const [toggleMeal, setToggleMeal] = useState("breakfast")
+const [breakfasts, setBreakfast] = useState([]);
+// const [lunches, setLunch] = useState([]);
+// const [dinners, setDinner] = useState([]);
 
-const breakfastRecipesMap = breakfasts.map(breakfast => <BreakfastRecipes key={breakfast.id} breakfast={breakfast} />)
+const breakfastRecipesMap = breakfastRecipes.map(breakfast => <BreakfastRecipes key={breakfastRecipes.id}  />)
 
-const lunchRecipesMap = lunches.map(lunch => <LunchRecipes key={lunch.id} lunch={lunch} />)
+// const lunchRecipesMap = lunches.map(lunch => <LunchRecipes key={lunch.id} lunch={lunch} />)
 
-const dinnerRecipesMap = dinners.map(dinner=> <DinnerRecipes key={dinner.id} dinner={dinner} />)
+// const dinnerRecipesMap = dinners.map(dinner=> <DinnerRecipes key={dinner.id} dinner={dinner} />)
 
 
-const changeBetweenMeals = ()  =>{
-  if (toggleMeal=== "breakfast"){
-          return <BreakfastRecipes />
-  } else if (toggleMeal === "lunch") {
-          return <LunchRecipes />
-  } else {
-    return <DinnerRecipes />
-  }
+// const changeBetweenMeals = ()  =>{
+//   if (toggleMeal=== "breakfast"){
+//           return <BreakfastRecipes />
+//   } else if (toggleMeal === "lunch") {
+//           return <LunchRecipes />
+//   } else {
+//     return <DinnerRecipes />
+//   }
 
   }
   return (
@@ -33,8 +36,8 @@ const changeBetweenMeals = ()  =>{
         {changeBetweenMeals}
         </div>
         <ul>{breakfastRecipesMap}</ul>
-        <ul>{lunchRecipesMap}</ul>
-        <ul>{dinnerRecipesMap}</ul>
+        {/* <ul>{lunchRecipesMap}</ul>
+        <ul>{dinnerRecipesMap}</ul> */}
     </section>
   )
 }
