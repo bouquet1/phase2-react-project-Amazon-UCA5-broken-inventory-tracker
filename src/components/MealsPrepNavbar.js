@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from "react-router-dom";
 
-function MealsPrepNavbar({onchangeMeal}) {
+
+function MealsPrepNavbar() {
   return (
     <>
-    <h3>Choose a Meal</h3>
+    <h4>Choose a Meal</h4>
       <section>{/* sets the breakfast/lunch/dinner buttons*/}
-        <button onClick={() => onchangeMeal("breakfast")}>Breakfast Recipes</button>
-        <button onClick={() => onchangeMeal("lunch")}>Lunch Recipes</button>
-        <button onClick={() => onchangeMeal("dinner")}>Dinner Recipes</button>
+        <NavLink className="mealprepNavbar" to="/breakfastRecipes" >Breakfast Recipes</NavLink>
+        <NavLink className="mealprepNavbar" to="/lunchRecipes">Lunch Recipes</NavLink>
+        <NavLink className="mealprepNavbar" to="/dinnerRecipes">Dinner Recipes</NavLink>
       </section>
     </>
   )

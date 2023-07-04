@@ -2,4 +2,7 @@ body {
     background-color:rgba(255, 71, 111, 0.6);
 }
 
-
+.mealprepNavbar {
+    color: rgb(83, 55, 242);
+    padding: 10px;
+}

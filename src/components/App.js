@@ -6,7 +6,7 @@ import ShoppingList from './ShoppingList';
 
 function App() {
 const [page, setPage] = useState("PrepList");
-
+const [breakfasts, setBreakfasts] = useState([]);
 
 //fetch req breakfast recipes
 // useEffect(() => {
@@ -33,7 +33,7 @@ return (
     <main>
     {/* move between MealPrepList and ShoppingList comp when comp mounted */}
     <Navbar onChangePage={setPage} />
-    {page === "PrepList" ? <MealPrepList  /> : <ShoppingList /> }
+    {page === "PrepList" ? <MealPrepList  breakfasts={setBreakfasts} /> : <ShoppingList /> }
     </main>
 );
 }

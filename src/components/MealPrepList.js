@@ -3,42 +3,36 @@ import MealsPrepNavbar from './MealsPrepNavbar';
 import BreakfastRecipes from './BreakfastRecipes';
 import LunchRecipes from './LunchRecipes';
 import DinnerRecipes from './DinnerRecipes';
+import { Switch, Route } from 'react-router-dom'
 
 
-function MealPrepList(breakfastRecipes) {
-const [toggleMeal, setToggleMeal] = useState("breakfast")
-const [breakfasts, setBreakfast] = useState([]);
-// const [lunches, setLunch] = useState([]);
-// const [dinners, setDinner] = useState([]);
+function MealPrepList() {
+const [meal, setMeal] = useState("breakfast")
 
-const breakfastRecipesMap = breakfastRecipes.map(breakfast => <BreakfastRecipes key={breakfastRecipes.id}  />)
-
-// const lunchRecipesMap = lunches.map(lunch => <LunchRecipes key={lunch.id} lunch={lunch} />)
-
-// const dinnerRecipesMap = dinners.map(dinner=> <DinnerRecipes key={dinner.id} dinner={dinner} />)
-
-
-// const changeBetweenMeals = ()  =>{
-//   if (toggleMeal=== "breakfast"){
-//           return <BreakfastRecipes />
-//   } else if (toggleMeal === "lunch") {
-//           return <LunchRecipes />
-//   } else {
-//     return <DinnerRecipes />
-//   }
-
-  }
   return (
-    <section>
+    <div>
+      <MealsPrepNavbar onChange={setMeal} />
+      <Switch>
+        <Route path="/breakfastRecipes">
+          <BreakfastRecipes />
+        </Route>
+        <Route path="/lunchRecipes">
+          <LunchRecipes />
+        </Route>
+        <Route path="/dinnerRecipes">
+          <DinnerRecipes />
+        </Route>
+      </Switch>
         <h1 className='mealPrep'>Meal Prep List</h1>
-        <div>
+        {/* <MealsPrepNavbar onchangeMeal={setMeal}/> */}
+        {/* {<div>
         <MealsPrepNavbar onchangeMeal={setToggleMeal} />
         {changeBetweenMeals}
         </div>
-        <ul>{breakfastRecipesMap}</ul>
+        <ul>{breakfastRecipesMap}</ul>} */}
         {/* <ul>{lunchRecipesMap}</ul>
-        <ul>{dinnerRecipesMap}</ul> */}
-    </section>
+        <ul>{dinnerRecipesMap}</ul>  */}
+    </div>
   )
 }
 
