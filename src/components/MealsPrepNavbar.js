@@ -1,18 +1,10 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
-
+import React from 'react'
 
 function MealsPrepNavbar() {
   return (
-    <>
-    <h4>Choose a Meal</h4>
-      <section>{/* sets the breakfast/lunch/dinner buttons*/}
-        <NavLink className="mealprepNavbar" to="/breakfastRecipes" >Breakfast Recipes</NavLink>
-        <NavLink className="mealprepNavbar" to="/lunchRecipes">Lunch Recipes</NavLink>
-        <NavLink className="mealprepNavbar" to="/dinnerRecipes">Dinner Recipes</NavLink>
-      </section>
-    </>
+    <div>MealsPrepNavbar</div>
   )
 }
 
-export default MealsPrepNavbar;
+export default MealsPrepNavbar
+
