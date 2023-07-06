@@ -9,7 +9,7 @@ const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nu
       {/* <h3>Breakfast Recipes</h3> */}
       <h4>Recipe {id}: {name} </h4>
       <h6>{totalPrepTime}</h6>
-      <img src={image} alt="recipe photo" />
+      <img src={image} alt="recipe" />
       <li>{ingredients}</li>
       <p>{directions1}</p>
       <p>{directions2}</p>

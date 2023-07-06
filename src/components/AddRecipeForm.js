@@ -24,8 +24,8 @@ function handleSubmit (e) {
   return (
     <div>
     <button>Add a New Recipe</button>
-    <section>
-      {/* <h4>New Recipe</h4> */}
+    <section className='new-recipe'>
+      <h3>New Recipe</h3>
       <form onSubmit={handleSubmit}>
         <label>
           Name:

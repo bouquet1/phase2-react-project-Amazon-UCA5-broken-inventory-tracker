@@ -16,4 +16,27 @@ button {
     background-color: rgb(243, 243, 176);
 }
 
+.new-recipe {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 243, 176);
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-size: 0.8em;
+}
 
