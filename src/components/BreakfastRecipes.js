@@ -1,9 +1,21 @@
 import React from 'react'
 
-function BreakfastRecipes() {
+function BreakfastRecipes({breakfastRecipe}) {
+const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nutritionFacts } = breakfastRecipe;
+
+
   return (
-    <div>BreakfastRecipes</div>
+    <div>
+      {/* <h3>Breakfast Recipes</h3> */}
+      <h4>Recipe {id}: {name} </h4>
+      <h6>{totalPrepTime}</h6>
+      <img src={image} />
+      <li>{ingredients}</li>
+      <p>{directions1}</p>
+      <p>{directions2}</p>
+      <p>{nutritionFacts}</p>
+    </div>
   )
 }
 
-export default BreakfastRecipes
+export default BreakfastRecipes;
