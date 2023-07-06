@@ -12,7 +12,7 @@ const [breakfastRecipes, setBreakfasts] = useState([]);
 useEffect(() => {
   fetch("http://localhost:3000/breakfastRecipes")
   .then(r => r.json())
-  .then(breakfastRecipes =>{setBreakfasts(breakfastRecipes);console.log(breakfastRecipes)})
+  .then(breakfastRecipesData =>{setBreakfasts(breakfastRecipesData);console.log(breakfastRecipesData)})
   //console.log to see ehat is fetched inside breakfastRecipes
 }, [])
 
