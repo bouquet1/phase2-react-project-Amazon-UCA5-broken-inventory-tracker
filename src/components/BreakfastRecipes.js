@@ -14,6 +14,9 @@ const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nu
       <p>{directions1}</p>
       <p>{directions2}</p>
       <p>{nutritionFacts}</p>
+      <button>Add Recipe to Meal Prep List</button>
+      <button>Add Ingredients to Shopping List</button>
+      <button>Delete Recipe</button>
     </div>
   )
 }
