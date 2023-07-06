@@ -20,11 +20,11 @@ button {
     display: flex;
     flex-direction: column;
     background-color: rgb(243, 243, 176);
-    width: 25%;
+    width: 50%;
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 1rem;
+    padding: 16px;
 }
 
 form {
@@ -36,7 +36,7 @@ form {
 label {
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
+    margin-top: 16px;
     font-size: 0.8em;
 }
 
