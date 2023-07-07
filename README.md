@@ -34,4 +34,7 @@ handle the GET recipes - useState recipes to fetch the recipes
 
 to meet the deadline I did MVP and I will continue to built my app and make it fucntional, aesthetic, and ready before graduation hoping to impress my new employee.
 
+placeholder image:
+https://www.forexfactory.com/thread/536931-need4speed-scalping?page=39
+
 https://www.forexfactory.com/attachment/image/1920501?d=1462368520
