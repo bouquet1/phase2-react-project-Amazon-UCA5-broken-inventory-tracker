@@ -7,7 +7,7 @@ const [formData, setFormData] = useState({
     directions1: "",
     directions2: "",
     ingredients: "",
-    image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520",
+    image: "",
     nutritionFacts: "",
 })
 
@@ -22,23 +22,21 @@ function handleSubmit (e) {
     e.preventDefault();
     //console.log("Submitted Data: ", formData)
     
-//convert ingredients data to an array
-// const revisedFormData = {
-//     recipeName: "",
-//     totalPrepTime: "",
-//     directions1: "",
-//     directions2: "",
-//     ingredients: "",
-//     image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520",
-//     nutritionFacts: "",
-// }
+
+
+    let newFormData = {...formData}
+
+    if(formData.image === ""){
+      newFormData = {...formData, image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520"}
+    }
+  
 
     fetch("http://localhost:3000/breakfastRecipes", {
         method: "POST",
         headers: { 
             "Content-Type": "application/json" 
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(newFormData)
     })
      .then(r => r.json())
      .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
