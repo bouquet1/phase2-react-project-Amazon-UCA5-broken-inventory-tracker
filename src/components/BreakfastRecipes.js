@@ -1,13 +1,15 @@
 import React from 'react';
+import AddRecipeForm from './AddRecipeForm';
+import { useState } from 'react';
 
 
-function BreakfastRecipes({breakfastRecipes}) {
-// const {id, recipeName, totalPrepTime, directions1, directions2, ingredients, image, nutritionFacts } = breakfastRecipes;
+function BreakfastRecipes({breakfastRecipes, displayNewRecipe}) {
+const [showForm, setShowForm] = useState(false);
 
 const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
-  const ingredientList = breakfastRecipe.ingredients.map(ingredient => {
-    return (<li key={breakfastRecipe}>{breakfastRecipe}</li>)
-  });
+  // const ingredientList = breakfastRecipe.ingredients.map(ingredient => {
+  //   return (<li key={breakfastRecipe}>{breakfastRecipe}</li>)
+  // });
   return <div key={index}>
     <h2>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h2>
     <h5>Prep Time: {breakfastRecipe.totalPrepTime}</h5>
@@ -25,9 +27,15 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
   </div>
 })
 
+function toggleForm(){
+  setShowForm(showForm => !showForm)
+}
+
   return (
     <div>
+      <button onClick={toggleForm} >Add a New Recipe</button>
       <h2>Meal Prep List</h2>
+      {showForm && <AddRecipeForm displayNewRecipe={displayNewRecipe} />}
       {breakfastRecipesMap}
     </div>
   )
@@ -35,17 +43,3 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
 
 export default BreakfastRecipes;
 
-
-  //before trying nested navbar
-    /*<div>
-      <h4>Recipe {id}: {recipeName} </h4>
-      <h6>{totalPrepTime}</h6>
-      <img src={image} alt="recipe" />
-      <li>{ingredients}</li>
-      <p>{directions1}</p>
-      <p>{directions2}</p>
-      <p>{nutritionFacts}</p>
-      <button>Add to Meal Prep list</button>
-      <button>Add Ingredients to Shopping List</button>
-      <button>Delete Recipe</button>
-    </div>*/

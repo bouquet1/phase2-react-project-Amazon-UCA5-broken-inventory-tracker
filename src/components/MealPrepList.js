@@ -17,8 +17,6 @@ function displayNewRecipe (newRecipe) {
   setBreakfast([...breakfastRecipes, newRecipe])
 }
 
-//before trying nested navbar
-// const breakfastRecipesMap = breakfastRecipes.map(breakfastRecipe => <BreakfastRecipes key={breakfastRecipe.id} breakfastRecipe={breakfastRecipe} />)
 
   return (
     <div>
@@ -26,7 +24,7 @@ function displayNewRecipe (newRecipe) {
       <MealsPrepNavbar />
       <Switch>
         <Route path="/breakfastRecipes">
-          <BreakfastRecipes breakfastRecipes={breakfastRecipes}/>
+          <BreakfastRecipes breakfastRecipes={breakfastRecipes} displayNewRecipe={displayNewRecipe} />
         </Route>
         <Route path="/lunchRecipes">
           <LunchRecipes />
