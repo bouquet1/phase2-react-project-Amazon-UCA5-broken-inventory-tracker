@@ -7,15 +7,15 @@ function BreakfastRecipes({breakfastRecipes, displayNewRecipe}) {
 const [showForm, setShowForm] = useState(false);
 
 const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
-  // const ingredientList = breakfastRecipe.ingredients.map(ingredient => {
-  //   return (<li key={breakfastRecipe}>{breakfastRecipe}</li>)
-  // });
+  const ingredientList = breakfastRecipe.ingredients.map(ingredient => {
+    return (<li key={ingredient}>{ingredient}</li>)
+  });
   return <div key={index}>
     <h2>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h2>
     <h5>Prep Time: {breakfastRecipe.totalPrepTime}</h5>
     <img src={breakfastRecipe.image} alt="recipe" />
     <p className='subtitles'>Ingredients:</p>
-    <ul> {breakfastRecipe.ingredients}</ul>
+    <ul> {ingredientList}</ul>
     <p className='subtitles'>Directions:</p>
     <p>{breakfastRecipe.directions1}</p>
     <p>{breakfastRecipe.directions2}</p>
