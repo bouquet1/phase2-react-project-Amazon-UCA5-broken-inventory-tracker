@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddRecipeForm({displayNewRecipe}) {
+function AddRecipeForm({displayNewRecipe, toggleForm}) {
 const [formData, setFormData] = useState({
     recipeName: "",
     totalPrepTime: "",
@@ -42,6 +42,8 @@ function handleSubmit (e) {
      .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
     //displays with callback 
     displayNewRecipe(newRecipeData); 
+    //hide the form again by firing toggle after Post
+    toggleForm()
     })
 }   
   return (

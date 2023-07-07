@@ -35,7 +35,7 @@ function toggleForm(){
     <div>
       <button onClick={toggleForm} >Add a New Recipe</button>
       <h2>Meal Prep List</h2>
-      {showForm && <AddRecipeForm displayNewRecipe={displayNewRecipe} />}
+      {showForm && <AddRecipeForm displayNewRecipe={displayNewRecipe} toggleForm={toggleForm} />}
       {breakfastRecipesMap}
     </div>
   )
