@@ -47,13 +47,9 @@ label {
     font-size: 0.8em;
 }
 
-/* .navbar {
-    background-color: rgb(249, 249, 6, 0.6);
-    border: 2px solid rgb(238, 106, 58);
-    border-radius: 8px;
-    margin: 18px;
-    padding: 7px;
-} */
-
+.subtitles {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 

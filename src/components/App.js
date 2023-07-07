@@ -13,12 +13,11 @@ useEffect(() => {
   fetch("http://localhost:3000/breakfastRecipes")
   .then(r => r.json())
   .then(breakfastRecipesData =>{setBreakfast(breakfastRecipesData);console.log(breakfastRecipesData)})
-  //console.log to see ehat is fetched inside breakfastRecipes
+
 }, [])
 
 return (
     <main>
-    {/* move between MealPrepList and ShoppingList comp when comp mounted */}
     <Navbar onChangePage={setPage} />
     {page === "PrepList" ? <MealPrepList setBreakfast={setBreakfast} breakfastRecipes={breakfastRecipes} /> : <ShoppingList /> }
     </main>

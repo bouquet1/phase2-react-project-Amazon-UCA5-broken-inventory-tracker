@@ -10,11 +10,14 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
   });
   return <div key={index}>
     <h2>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h2>
-    <h6>{breakfastRecipe.totalPrepTime}</h6>
+    <h5>Prep Time: {breakfastRecipe.totalPrepTime}</h5>
     <img src={breakfastRecipe.image} alt="recipe" />
-    <li>{breakfastRecipe.ingredients}</li>
+    <p className='subtitles'>Ingredients:</p>
+    <ul> {breakfastRecipe.ingredients}</ul>
+    <p className='subtitles'>Directions:</p>
     <p>{breakfastRecipe.directions1}</p>
     <p>{breakfastRecipe.directions2}</p>
+    <p className='subtitles'>Nutrition Facts:</p>
     <p>{breakfastRecipe.nutritionFacts}</p>
     <button>Add to Meal Prep list</button>
     <button>Add Ingredients to Shopping List</button>
