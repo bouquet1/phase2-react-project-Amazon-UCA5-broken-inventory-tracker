@@ -1,22 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BreakfastRecipes from './BreakfastRecipes';
 import AddRecipeForm from './AddRecipeForm';
+import MealsPrepNavbar from './MealsPrepNavbar';
+import { Route, Switch } from 'react-router-dom';
+import LunchRecipes from './LunchRecipes';
+import DinnerRecipes from './DinnerRecipes';
 
 
-function MealPrepList({breakfast}) {
-//console.log(breakfasts)
+function MealPrepList({breakfastRecipes, setBreakfast}) {
+//deneme nested NavBar
+  const [meal, setMeal] = useState(["BreakfastRecipes"])
 
-const breakfastRecipesMap = breakfast.map(breakfastRecipe => <BreakfastRecipes key={breakfastRecipe.id} breakfastRecipe={breakfastRecipe} />)
+
+//display POST data, new rrecipe to DOM
+function displayNewRecipe (newRecipe) {
+  setBreakfast([...breakfastRecipes, newRecipe])
+}
+
+//before trying nested navbar
+// const breakfastRecipesMap = breakfastRecipes.map(breakfastRecipe => <BreakfastRecipes key={breakfastRecipe.id} breakfastRecipe={breakfastRecipe} />)
 
   return (
     <div>
       <h2>Meal Prep List</h2>
-      <AddRecipeForm />
-      <ul>
-        {/* displays recipes after fetch */}
-         <h3>Breakfast Recipes</h3>
-        {breakfastRecipesMap}
-      </ul>
+      <MealsPrepNavbar />
+      <Switch>
+        <Route path="/breakfastRecipes">
+          <BreakfastRecipes breakfastRecipes={breakfastRecipes}/>
+        </Route>
+        <Route path="/lunchRecipes">
+          <LunchRecipes />
+        </Route>
+        <Route path="/dinnerRecipes">
+          <DinnerRecipes />
+        </Route>
+      </Switch>
     </div>
   )
 }

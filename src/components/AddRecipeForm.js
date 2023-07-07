@@ -1,25 +1,37 @@
 import React, { useState } from 'react'
 
-function AddRecipeForm() {
+function AddRecipeForm({displayNewRecipe}) {
 const [formData, setFormData] = useState({
     recipeName: "",
     totalPrepTime: "",
     directions1: "",
     directions2: "",
     ingredients: "",
-    image: "",
+    image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520",
     nutritionFacts: "",
 })
 
 
-
+//onChange add the new data to the current array/ nondestructive
 function handleChange (e) {
     setFormData({...formData, [e.target.name]: e.target.value})
 }
 
+//handle submit and POST the new recipe
 function handleSubmit (e) {
     e.preventDefault();
-    console.log("Submitted Data: ", formData)
+    //console.log("Submitted Data: ", formData)
+    
+//convert ingredients data to an array
+// const revisedFormData = {
+//     recipeName: "",
+//     totalPrepTime: "",
+//     directions1: "",
+//     directions2: "",
+//     ingredients: "",
+//     image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520",
+//     nutritionFacts: "",
+// }
 
     fetch("http://localhost:3000/breakfastRecipes", {
         method: "POST",
@@ -29,7 +41,10 @@ function handleSubmit (e) {
         body: JSON.stringify(formData)
     })
      .then(r => r.json())
-     .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)})
+     .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
+    //displays with callback 
+    displayNewRecipe(newRecipeData); 
+    })
 }   
   return (
     <>
@@ -95,15 +110,3 @@ function handleSubmit (e) {
 
 export default AddRecipeForm;
 
-
-/**
- * Required Headers:
-{ "Content-Type": "application/json" }
-
-Body:
-{
-  "prompt": string,
-  "answers": array of strings,
-  "correctIndex": integer
-}
- */

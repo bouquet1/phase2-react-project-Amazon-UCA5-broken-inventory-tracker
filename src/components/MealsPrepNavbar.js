@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+//deneme nested navbar
+import { NavLink } from 'react-router-dom';
 
 function MealsPrepNavbar() {
   return (
-    <div>MealsPrepNavbar</div>
+    //deneme nested navbar
+    <div>
+      <button><NavLink className="navbar" to="/breakfastRecipes">Breakfast Recipes</NavLink></button>
+      <button><NavLink className="navbar" to="/lunchRecipes">Lunch Recipes</NavLink></button>
+      <button><NavLink className="navbar" to="/dinnerRecipes">Dinner Recipes</NavLink></button>
+    </div>
   )
 }
 

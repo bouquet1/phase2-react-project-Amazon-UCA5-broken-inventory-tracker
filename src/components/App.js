@@ -6,24 +6,21 @@ import ShoppingList from './ShoppingList';
 
 function App() {
 const [page, setPage] = useState("PrepList");
-const [breakfastRecipes, setBreakfasts] = useState([]);
+const [breakfastRecipes, setBreakfast] = useState([]);
 
 //fetch req breakfast recipes
 useEffect(() => {
   fetch("http://localhost:3000/breakfastRecipes")
   .then(r => r.json())
-  .then(breakfastRecipesData =>{setBreakfasts(breakfastRecipesData);console.log(breakfastRecipesData)})
+  .then(breakfastRecipesData =>{setBreakfast(breakfastRecipesData);console.log(breakfastRecipesData)})
   //console.log to see ehat is fetched inside breakfastRecipes
 }, [])
-
-
-
 
 return (
     <main>
     {/* move between MealPrepList and ShoppingList comp when comp mounted */}
     <Navbar onChangePage={setPage} />
-    {page === "PrepList" ? <MealPrepList  breakfast={breakfastRecipes} /> : <ShoppingList /> }
+    {page === "PrepList" ? <MealPrepList setBreakfast={setBreakfast} breakfastRecipes={breakfastRecipes} /> : <ShoppingList /> }
     </main>
 );
 }
