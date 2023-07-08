@@ -6,16 +6,24 @@ const [formData, setFormData] = useState({
     totalPrepTime: "",
     directions1: "",
     directions2: "",
-    ingredients: "",
+    ing1: "", 
+    ing2: "", 
+    ing3: "", 
+    ing4: "", 
+    ing5: "", 
+    ing6: "", 
+    ing7: "", 
+    ing8: "", 
+    ing9: "", 
+    ing10: "",
     image: "",
     nutritionFacts: "",
 })
 
-
 //onChange add the new data to the current array/ nondestructive
 function handleChange (e) {
-    setFormData({...formData, [e.target.name]: e.target.value})
-}
+    setFormData({...formData, [e.target.name]: e.target.value, ingredients: [formData.ing1, formData.ing2, formData.ing3, formData.ing4, formData.ing5, formData.ing6, formData.ing7, formData.ing8, formData.ing9, formData.ing10]
+    })}
 
 //handle submit and POST the new recipe
 function handleSubmit (e) {
@@ -31,27 +39,28 @@ function handleSubmit (e) {
     }
   
 
-    fetch("http://localhost:3000/breakfastRecipes", {
-        method: "POST",
-        headers: { 
-            "Content-Type": "application/json" 
-        },
-        body: JSON.stringify(newFormData)
-    })
-     .then(r => r.json())
-     .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
-    //displays with callback 
-    displayNewRecipe(newRecipeData); 
-    //hide the form again by firing toggle after Post
-    toggleForm()
-    })
+    // fetch("http://localhost:3000/breakfastRecipes", {
+    //     method: "POST",
+    //     headers: { 
+    //         "Content-Type": "application/json" 
+    //     },
+    //     body: JSON.stringify(newFormData)
+    // })
+    //  .then(r => r.json())
+    //  .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
+    // //displays with callback 
+    // displayNewRecipe(newRecipeData); 
+    // //hide the form again by firing toggle after Post
+    // toggleForm()
+   // }
+    //)
 }   
   return (
     <>
     {/* <button>Add a New Recipe</button> */}
     <section className='new-recipe'>
       <h3>New Recipe</h3>
-      <form onSubmit={handleSubmit}>
+      <form  className="formboxes" onSubmit={handleSubmit}>
         <label>
           Recipe Name:
           <input type="text" 
@@ -81,11 +90,53 @@ function handleSubmit (e) {
           onChange={handleChange} />
         </label>
         <label>
-          Ingredients:
+          Ingredient1:
           <input type="text" 
-          name="ingredients" 
-          value={formData.ingredients} 
+          name="ing1" 
+          value={formData.ing1} 
           onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient2:
+          <input type="text" 
+          name="ing2" 
+          value={formData.ing2} 
+          onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 3:
+          <input type="text" 
+          name="ing3" 
+          value={formData.ing3} 
+          onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 4:
+          <input type="text" name="ing4" value={formData.ing4} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 5:
+          <input type="text" name="ing5" value={formData.ing5} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 6:
+          <input type="text" name="ing6" value={formData.ing6} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 7:
+          <input type="text" name="ing7" value={formData.ing7} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 8:
+          <input type="text" name="ing8" value={formData.ing8} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 9:
+          <input type="text" name="ing9" value={formData.ing9} onChange={handleChange} />
+        </label>
+        <label>
+          Ingredient 10:
+          <input type="text" name="ing10" value={formData.ing10} onChange={handleChange} />
         </label>
         <label>
           Add an Image:
