@@ -1,25 +1,26 @@
 body {
-    background-color: rgb(247, 202, 24, 0.9);
+    background-color: rgb(251, 194, 82);
 }
 
-.navbar {
-    background-color: rgb(246, 203, 207);
-    padding: 5px;
+.navbardiv {
+    background-color: rgb(254, 232, 176);
+    padding: 10px;
    
 }
 
-.h1,
-.h2,
-.h3 {
+h1,
+h2,
+h3 {
+    color: rgb(220, 13, 9);
     justify-content: center;
     align-items: center;
 }
 
 button {
-    border: 2px solid rgb(238, 106, 58);
+    border: 3px solid rgb(221, 74, 72);
     padding: 7px 10px;
     margin: 10px;
-    background-color: rgb(249, 249, 6, 0.8);
+    background-color: rgb(240, 236, 207);
     /* background-color: rgb(243, 243, 176); */
 }
 
@@ -57,7 +58,7 @@ label {
 }
 
 .formArea {
-    background-color: rgb(243, 243, 176);
+    background-color: rgb(192, 216, 192);
     margin-top: 30px;
 }
 
