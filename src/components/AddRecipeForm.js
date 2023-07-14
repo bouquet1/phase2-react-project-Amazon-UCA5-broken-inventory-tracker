@@ -1,4 +1,13 @@
 import React, { useState } from 'react'
+import AddIngredientsForm from './AddIngredientsForm';
+
+//separate ingredients into a new form
+//display the input at DOM b4 working on POST
+//revise state variable
+// end with having two forms. 1 for ingredients and 1 for the rest
+  //INGREDIENTs FORM
+  //1 input area, ingredient in => display on Dom => clean input area => new input => display on Dom => clean input area => new input 
+
 
 function AddRecipeForm({displayNewRecipe, toggleForm}) {
 const [formData, setFormData] = useState({
@@ -54,7 +63,7 @@ function handleSubmit (e) {
     toggleForm()
    }
     )
-}   
+}  
   return (
     <>
     <section className='new-recipe'>
@@ -87,57 +96,6 @@ function handleSubmit (e) {
           name="directions2" 
           value={formData.directions2} 
           onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient1:
-          <input type="text" 
-          name="ing1" 
-          value={formData.ing1} 
-          onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient2:
-          <input type="text" 
-          name="ing2" 
-          value={formData.ing2} 
-          onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 3:
-          <input type="text" 
-          name="ing3" 
-          value={formData.ing3} 
-          onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 4:
-          <input type="text" name="ing4" value={formData.ing4} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 5:
-          <input type="text" name="ing5" value={formData.ing5} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 6:
-          <input type="text" name="ing6" value={formData.ing6} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 7:
-          <input type="text" name="ing7" value={formData.ing7} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 8:
-          <input type="text" name="ing8" value={formData.ing8} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 9:
-          <input type="text" name="ing9" value={formData.ing9} onChange={handleChange} />
-        </label>
-        <label>
-          Ingredient 10:
-          <input type="text" name="ing10" value={formData.ing10} onChange={handleChange} />
-        </label>
-        <label>
           Add an Image:
           <input type="text" 
           name="image" 
@@ -153,6 +111,7 @@ function handleSubmit (e) {
         </label>
         <button type="submit">Add Recipe</button>
       </form>
+      <AddIngredientsForm />
     </section>
     </>
   )
