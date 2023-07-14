@@ -39,25 +39,24 @@ function handleSubmit (e) {
     }
   
 
-    // fetch("http://localhost:3000/breakfastRecipes", {
-    //     method: "POST",
-    //     headers: { 
-    //         "Content-Type": "application/json" 
-    //     },
-    //     body: JSON.stringify(newFormData)
-    // })
-    //  .then(r => r.json())
-    //  .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
-    // //displays with callback 
-    // displayNewRecipe(newRecipeData); 
-    // //hide the form again by firing toggle after Post
-    // toggleForm()
-   // }
-    //)
+    fetch("http://localhost:3000/breakfast", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json" 
+        },
+        body: JSON.stringify(newFormData)
+    })
+     .then(r => r.json())
+     .then(newRecipeData => {console.log("New Recipe Data: ", newRecipeData)
+    //displays with callback 
+    displayNewRecipe(newRecipeData); 
+    //hide the form again by firing toggle after Post
+    toggleForm()
+   }
+    )
 }   
   return (
     <>
-    {/* <button>Add a New Recipe</button> */}
     <section className='new-recipe'>
       <h3>New Recipe</h3>
       <form  className="formboxes" onSubmit={handleSubmit}>

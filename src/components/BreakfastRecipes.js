@@ -11,7 +11,7 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
     return (<li key={ingredient}>{ingredient}</li>)
   });
   return <div key={index}>
-    <h2>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h2>
+    <h3>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h3>
     <h5>Prep Time: {breakfastRecipe.totalPrepTime}</h5>
     <img src={breakfastRecipe.image} alt="recipe" />
     <p className='subtitles'>Ingredients:</p>
@@ -33,7 +33,7 @@ function toggleForm(){
 
   return (
     <>
-    <h3>Breakfast Recipes</h3>
+    <h2>Breakfast Recipes</h2>
     <div className='formArea'>
       <button onClick={toggleForm} >Add a New Recipe</button>
       {showForm && <AddRecipeForm displayNewRecipe={displayNewRecipe} toggleForm={toggleForm} />}

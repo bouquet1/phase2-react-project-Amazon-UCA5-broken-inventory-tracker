@@ -9,8 +9,7 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
     color: rgb(220, 13, 9);
     justify-content: center;
     align-items: center;
