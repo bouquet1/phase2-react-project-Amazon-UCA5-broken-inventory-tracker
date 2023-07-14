@@ -10,7 +10,7 @@ const [breakfastRecipes, setBreakfast] = useState([]);
 
 //fetch req breakfast recipes
 useEffect(() => {
-  fetch("http://localhost:3000/breakfastRecipes")
+  fetch("http://localhost:3000/breakfast")
   .then(r => r.json())
   .then(breakfastRecipesData =>{setBreakfast(breakfastRecipesData);console.log(breakfastRecipesData)})
 
