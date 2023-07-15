@@ -9,7 +9,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     color: rgb(220, 13, 9);
     justify-content: center;
     align-items: center;
@@ -24,20 +25,17 @@ button {
 }
 
 .new-recipe {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-items: center;
+    /* display: flex;
+    flex-direction: column; */
+    width: 80%;
+    /* align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 16px;
+    padding: 16px; */
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
 
 label {
     display: flex;

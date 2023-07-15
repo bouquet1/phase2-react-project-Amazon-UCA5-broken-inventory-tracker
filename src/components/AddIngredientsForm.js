@@ -18,13 +18,15 @@ function handleIngredientsList(){
     setIngredientsList(ingredients)
 }
 
-//handleSubmit
-//
+function handleSubmit(e){
+    e.preventDefault()
+}
 
   return (
-    <div>
-    <h3>Add Ingredients</h3>
-    <form>
+    <section>
+    <h3>Ingredients</h3>
+    <p>Add the ingredient and the measurement separated by comma such as: <br/> "Butter, 2 tbsp" <br/> Please add one ingredient at a time.</p>
+    <form onSubmit={handleSubmit}>
         <label>
           Ingredient:
           <input type="text" 
@@ -38,7 +40,8 @@ function handleIngredientsList(){
           value="Add Ingredient"/>
         </label>
     </form>
-    </div>
+    <button type="submit">Add Recipe</button>
+    </section>
   )
 }
 

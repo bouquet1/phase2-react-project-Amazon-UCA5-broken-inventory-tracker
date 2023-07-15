@@ -15,24 +15,12 @@ const [formData, setFormData] = useState({
     totalPrepTime: "",
     directions1: "",
     directions2: "",
-    ing1: "", 
-    ing2: "", 
-    ing3: "", 
-    ing4: "", 
-    ing5: "", 
-    ing6: "", 
-    ing7: "", 
-    ing8: "", 
-    ing9: "", 
-    ing10: "",
-    image: "",
     nutritionFacts: "",
 })
 
 //onChange add the new data to the current array/ nondestructive
 function handleChange (e) {
-    setFormData({...formData, [e.target.name]: e.target.value, ingredients: [formData.ing1, formData.ing2, formData.ing3, formData.ing4, formData.ing5, formData.ing6, formData.ing7, formData.ing8, formData.ing9, formData.ing10]
-    })}
+    setFormData({...formData, [e.target.name]: e.target.value})}
 
 //handle submit and POST the new recipe
 function handleSubmit (e) {
@@ -66,8 +54,8 @@ function handleSubmit (e) {
 }  
   return (
     <>
+    <h3>New Recipe</h3>
     <section className='new-recipe'>
-      <h3>New Recipe</h3>
       <form  className="formboxes" onSubmit={handleSubmit}>
         <label>
           Recipe Name:
@@ -84,7 +72,7 @@ function handleSubmit (e) {
           onChange={handleChange} />
         </label>
         <label>
-          Directions:
+          Directions1:
           <input type="text" 
           name="directions1" 
           value={formData.directions1} 
@@ -96,6 +84,8 @@ function handleSubmit (e) {
           name="directions2" 
           value={formData.directions2} 
           onChange={handleChange} />
+        </label>
+        <label>
           Add an Image:
           <input type="text" 
           name="image" 
@@ -109,7 +99,7 @@ function handleSubmit (e) {
           value={formData.nutritionFacts} 
           onChange={handleChange} />
         </label>
-        <button type="submit">Add Recipe</button>
+        {/* <button type="submit">Add Recipe</button> */}
       </form>
       <AddIngredientsForm />
     </section>
