@@ -9,7 +9,7 @@ function handleChange(e){
     e.preventDefault()
     setIngredients(e.target.value)
 }
-console.log("I track input: ", ingredients, "I track inglist: ", ingredientsList)
+//console.log("I track input: ", ingredients, "I track inglist: ", ingredientsList)
 
 function handleIngredientsList(){
     //ingList is the list of all ingredients array of strings
@@ -25,13 +25,15 @@ function handleSubmit(e){
   return (
     <section>
     <h3>Ingredients</h3>
-    <p>Add the ingredient and the measurement separated by comma such as: <br/> "Butter, 2 tbsp" <br/> Please add one ingredient at a time.</p>
+    <p>Add one ingredient at a time, please. </p>
+    <p>Add the ingredient and the measurement separated by comma. <br/>Boneless Chicken Breast, 2lb <br/>Butter, 2 tbsp</p>
     <form onSubmit={handleSubmit}>
         <label>
           Ingredient:
           <input type="text" 
           name="ing1" 
           value={ingredients} 
+          placeholder="Dresscode :) => Ingredient, measurement"
           onChange={handleChange} />
         </label>
         <label className='submit_ingredient'>

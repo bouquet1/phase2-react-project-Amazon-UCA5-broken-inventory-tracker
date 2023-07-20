@@ -7,6 +7,7 @@ To start using React Router, we need to install react-router-dom:
 ```
 $ npm install
 $ npm install react-router-dom@5
+$ npm start
 ```
 
 Note: make sure to include @5 at the end of the install command to install React Router version 5 instead of version 6.

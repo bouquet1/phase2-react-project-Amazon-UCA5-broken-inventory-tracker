@@ -54,7 +54,7 @@ function handleSubmit (e) {
 }  
   return (
     <>
-    <h3>New Recipe</h3>
+    <h3>Recipe Details</h3>
     <section className='new-recipe'>
       <form  className="formboxes" onSubmit={handleSubmit}>
         <label>
@@ -62,6 +62,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="recipeName" 
           value={formData.recipeName} 
+          placeholder="Enter a name"
           onChange={handleChange} />
         </label>
         <label>
@@ -69,6 +70,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="totalPrepTime" 
           value={formData.totalPrepTime} 
+          placeholder="e.g 15 min"
           onChange={handleChange} />
         </label>
         <label>
@@ -76,6 +78,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="directions1" 
           value={formData.directions1} 
+          placeholder="Type your way"
           onChange={handleChange} />
         </label>
         <label>
@@ -83,6 +86,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="directions2" 
           value={formData.directions2} 
+          placeholder="more directions"
           onChange={handleChange} />
         </label>
         <label>
@@ -90,6 +94,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="image" 
           value={formData.image} 
+          placeholder="yummm... fell free to add a pic"
           onChange={handleChange} />
         </label>
         <label>
@@ -97,6 +102,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="nutritionFacts" 
           value={formData.nutritionFacts} 
+          placeholder="Optional"
           onChange={handleChange} />
         </label>
         {/* <button type="submit">Add Recipe</button> */}
