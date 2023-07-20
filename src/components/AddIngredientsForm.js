@@ -6,7 +6,6 @@ const [ingredients, setIngredients] = useState("")
 const [ingredientsList, setIngredientsList] = useState([])
 
 function handleChange(e){
-    e.preventDefault()
     setIngredients(e.target.value)
 }
 //console.log("I track input: ", ingredients, "I track inglist: ", ingredientsList)
@@ -26,7 +25,7 @@ function handleSubmit(e){
     <section>
     <h3>Ingredients</h3>
     <p>Add one ingredient at a time, please. </p>
-    <p>Add the ingredient and the measurement separated by comma. <br/>Boneless Chicken Breast, 2lb <br/>Butter, 2 tbsp</p>
+    <p>Add the ingredient and the measurement separated by comma. <br/>Boneless Chicken Breast, 2lb <br/>Butter, 2 Tbsp</p>
     <form onSubmit={handleSubmit}>
         <label>
           Ingredient:
@@ -42,6 +41,7 @@ function handleSubmit(e){
           value="Add Ingredient"/>
         </label>
     </form>
+    <div className='ingredients-container'></div>
     <button type="submit">Add Recipe</button>
     </section>
   )
