@@ -23,6 +23,7 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
     <p>{breakfastRecipe.nutritionFacts}</p>
     <button>Add to Meal Prep list</button>
     <button>Add Ingredients to Shopping List</button>
+    <button>Update Recipe</button>
     <button>Delete Recipe</button>
   </div>
 })
