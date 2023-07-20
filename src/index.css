@@ -3,9 +3,18 @@ body {
 }
 
 .navbardiv {
-    background-color: rgb(254, 232, 176);
+    /* background-color: rgb(254, 232, 176); */
     padding: 10px;
    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px black solid;
+    border-radius: 7px;
+    width: 200px;
 }
 
 h1,

@@ -20,7 +20,7 @@ function displayNewRecipe (newRecipe) {
 
   return (
     <div>
-      <h1>Meal Prep List</h1>
+      <h1>UR Meal Prep Assistant</h1>
       <MealsPrepNavbar />
       <Switch>
         <Route path="/breakfastRecipes">
