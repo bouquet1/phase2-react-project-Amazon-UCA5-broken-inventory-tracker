@@ -35,7 +35,7 @@ function handleSubmit (e) {
       newFormData = {...formData, image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520"}
     }
   
-
+  /*
     fetch("http://localhost:3000/breakfast", {
         method: "POST",
         headers: { 
@@ -48,14 +48,14 @@ function handleSubmit (e) {
     //displays with callback 
     displayNewRecipe(newRecipeData); 
     //hide the form again by firing toggle after Post
-    toggleForm()
+    //toggleForm()
    }
     )
+    */
 }  
   return (
-    <>
-    <h3>Recipe Details</h3>
     <section className='new-recipe'>
+      <h3>Recipe Details</h3>
       <form  className="formboxes" onSubmit={handleSubmit}>
         <label>
           Recipe Name:
@@ -105,11 +105,9 @@ function handleSubmit (e) {
           placeholder="Optional"
           onChange={handleChange} />
         </label>
-        {/* <button type="submit">Add Recipe</button> */}
       </form>
       <AddIngredientsForm />
     </section>
-    </>
   )
 }
 
