@@ -1,29 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 
-function AddIngredientsForm() {
+function AddIngredientsForm({updateIngredientsList}) {
 const [ingredients, setIngredients] = useState("")
 const [ingredientsList, setIngredientsList] = useState([])
 
 function handleChange(e){
     setIngredients(e.target.value)
 }
-//console.log("I track input: ", ingredients)
 
 function handleIngredientsList(e){
   e.preventDefault()
-    //ingredients holds each strings in the array of ingredientsList
-    /** BEFORE POST REQ.
-        1. user will put an ingredient, click the 'add ingredient',and the ingredient will be displayed @ DOM, text area will be cleared 
-        2. Add x button if the user typed wrong and want to type again
+    /** BEFORE POST req user adds ingredients to display @ DOM. Add x button if the user typed wrong and want to type again. POST after user see all the ingredients and happy with it.
      */
   if (ingredients.trim() !== "") {
     setIngredientsList((currentList) => [...currentList, ingredients.trim()])
-    setIngredients("")
-    //console.log("I track inglist: ", ingredientsList)
+    setIngredients("") //clears the input field for next ingredient
     }
-    
+    // Calls the updateIngredientsList to update the parent's state
+    updateIngredientsList(ingredientsList);
 }
+
+
 //render each ingredient inside ingredientsList 
 const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={index}>{ingredient}</li>)
 
@@ -54,3 +52,4 @@ const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={i
 }
 
 export default AddIngredientsForm;
+

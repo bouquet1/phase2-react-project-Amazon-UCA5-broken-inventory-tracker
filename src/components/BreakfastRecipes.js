@@ -11,7 +11,7 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
     return (<li key={ingredient}>{ingredient}</li>)
   });
   return <div key={index}>
-    <h3>Recipe {breakfastRecipe.id}: {breakfastRecipe.recipeName}</h3>
+    <h3>{breakfastRecipe.name}</h3>
     <h5>Prep Time: {breakfastRecipe.totalPrepTime}</h5>
     <img src={breakfastRecipe.image} alt="recipe" />
     <p className='subtitles'>Ingredients:</p>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import AddIngredientsForm from './AddIngredientsForm';
 
-//separate ingredients into a new form
-//display the input at DOM b4 working on POST
-//revise state variable
+//separate ingredients into a new form (AddIngredientsForm)
+//display ingredients at DOM b4 working on POST (AddIngredientsForm)
 
 function AddRecipeForm({displayNewRecipe, toggleForm}) {
 const [formData, setFormData] = useState({
@@ -19,6 +18,13 @@ const [formData, setFormData] = useState({
 //onChange add the new data to the current array/ nondestructive
 function handleChange (e) {
     setFormData({...formData, [e.target.name]: e.target.value})}
+
+
+//callback to retrieve ingredients array (ingredientsList) from AddIngredientsForm to formData
+function updateIngredientsList(ingredientsList) {
+  setFormData({...formData, ingredients: ingredientsList})
+}
+
 
 //handle submit and POST the new recipe
 function handleSubmit (e) {
@@ -50,6 +56,7 @@ function handleSubmit (e) {
 }  
   return (
     <section className='new-recipe'>
+      {/* wrap form for CSS, position 'add recipe' button after child component for POST */}
       <div className="form-container">
       <h3>Recipe Details</h3>
       <p>Please enter the details of your new recipe!</p>
@@ -104,7 +111,8 @@ function handleSubmit (e) {
         </label>
         <button className='submit-new-recipe' type="submit" onSubmit={handleSubmit} >Add Recipe</button>
       </form>
-      <AddIngredientsForm />
+      {/* can't have form inside another form */}
+      <AddIngredientsForm updateIngredientsList={updateIngredientsList} />
       <p>Done? <br/> Save it to your recipe list simply clicking the add button below.</p>
     </div>
     </section>
