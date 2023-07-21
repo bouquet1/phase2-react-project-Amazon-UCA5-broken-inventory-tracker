@@ -27,7 +27,7 @@ body {
 .logo {
     border: 1px black solid;
     border-radius: 7px;
-    width: 150px; 
+    width: 180px; 
     margin: 20px;
 }
 
@@ -60,10 +60,23 @@ button {
     width: 80%;
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 7px ridge rgb(251, 194, 82);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px;
+}
+
+/* positions AddRecipe button from middle to bottom right of the form container */
+.form-container {
+    position: relative;
+    background-color: rgb(192, 216, 192);
     padding: 20px;
-    margin: 20px;
+}
+
+.submit-new-recipe {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .ingredients-container {

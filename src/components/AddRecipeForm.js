@@ -11,6 +11,7 @@ const [formData, setFormData] = useState({
     totalPrepTime: "",
     directions1: "",
     directions2: "",
+    ingredients: [],
     image:"",
     nutritionFacts: ""
 })
@@ -49,6 +50,7 @@ function handleSubmit (e) {
 }  
   return (
     <section className='new-recipe'>
+      <div className="form-container">
       <h3>Recipe Details</h3>
       <p>Please enter the details of your new recipe!</p>
       <form  className="formboxes" onSubmit={handleSubmit}>
@@ -100,10 +102,11 @@ function handleSubmit (e) {
           placeholder="nutrition facts"
           onChange={handleChange} />
         </label>
+        <button className='submit-new-recipe' type="submit" onSubmit={handleSubmit} >Add Recipe</button>
       </form>
       <AddIngredientsForm />
       <p>Done? <br/> Save it to your recipe list simply clicking the add button below.</p>
-      <button className='submit-new-recipe' type="submit" onSubmit={handleSubmit} >Add Recipe</button>
+    </div>
     </section>
   )
 }
