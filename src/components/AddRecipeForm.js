@@ -4,10 +4,6 @@ import AddIngredientsForm from './AddIngredientsForm';
 //separate ingredients into a new form
 //display the input at DOM b4 working on POST
 //revise state variable
-// end with having two forms. 1 for ingredients and 1 for the rest
-  //INGREDIENTs FORM
-  //1 input area, ingredient in => display on Dom => clean input area => new input => display on Dom => clean input area => new input 
-
 
 function AddRecipeForm({displayNewRecipe, toggleForm}) {
 const [formData, setFormData] = useState({
@@ -15,7 +11,8 @@ const [formData, setFormData] = useState({
     totalPrepTime: "",
     directions1: "",
     directions2: "",
-    nutritionFacts: "",
+    image:"",
+    nutritionFacts: ""
 })
 
 //onChange add the new data to the current array/ nondestructive
@@ -25,9 +22,7 @@ function handleChange (e) {
 //handle submit and POST the new recipe
 function handleSubmit (e) {
     e.preventDefault();
-    //console.log("Submitted Data: ", formData)
-    
-
+    console.log("Submitted Data: ", formData)
 
     let newFormData = {...formData}
 
@@ -35,7 +30,6 @@ function handleSubmit (e) {
       newFormData = {...formData, image: "https://www.forexfactory.com/attachment/image/1920501?d=1462368520"}
     }
   
-  /*
     fetch("http://localhost:3000/breakfast", {
         method: "POST",
         headers: { 
@@ -51,7 +45,7 @@ function handleSubmit (e) {
     //toggleForm()
    }
     )
-    */
+  
 }  
   return (
     <section className='new-recipe'>
@@ -109,7 +103,7 @@ function handleSubmit (e) {
       </form>
       <AddIngredientsForm />
       <p>Done? <br/> Save it to your recipe list simply clicking the add button below.</p>
-      <button className='submit-new-recipe' type="submit">Add Recipe</button>
+      <button className='submit-new-recipe' type="submit" onSubmit={handleSubmit} >Add Recipe</button>
     </section>
   )
 }

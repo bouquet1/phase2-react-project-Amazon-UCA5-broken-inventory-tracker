@@ -8,7 +8,7 @@ const [ingredientsList, setIngredientsList] = useState([])
 function handleChange(e){
     setIngredients(e.target.value)
 }
-console.log("I track input: ", ingredients)
+//console.log("I track input: ", ingredients)
 
 function handleIngredientsList(e){
   e.preventDefault()
@@ -20,7 +20,7 @@ function handleIngredientsList(e){
   if (ingredients.trim() !== "") {
     setIngredientsList((currentList) => [...currentList, ingredients.trim()])
     setIngredients("")
-    console.log("I track inglist: ", ingredientsList)
+    //console.log("I track inglist: ", ingredientsList)
     }
     
 }
