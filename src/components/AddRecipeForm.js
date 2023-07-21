@@ -56,6 +56,7 @@ function handleSubmit (e) {
   return (
     <section className='new-recipe'>
       <h3>Recipe Details</h3>
+      <p>Please enter the details of your new recipe!</p>
       <form  className="formboxes" onSubmit={handleSubmit}>
         <label>
           Recipe Name:
@@ -78,7 +79,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="directions1" 
           value={formData.directions1} 
-          placeholder="Type your way"
+          placeholder="directions"
           onChange={handleChange} />
         </label>
         <label>
@@ -94,7 +95,7 @@ function handleSubmit (e) {
           <input type="text" 
           name="image" 
           value={formData.image} 
-          placeholder="yummm... fell free to add a pic"
+          placeholder="take a good pic"
           onChange={handleChange} />
         </label>
         <label>
@@ -102,11 +103,13 @@ function handleSubmit (e) {
           <input type="text" 
           name="nutritionFacts" 
           value={formData.nutritionFacts} 
-          placeholder="Optional"
+          placeholder="nutrition facts"
           onChange={handleChange} />
         </label>
       </form>
       <AddIngredientsForm />
+      <p>Done? <br/> Save it to your recipe list simply clicking the add button below.</p>
+      <button className='submit-new-recipe' type="submit">Add Recipe</button>
     </section>
   )
 }

@@ -13,13 +13,9 @@ console.log("I track input: ", ingredients)
 function handleIngredientsList(e){
   e.preventDefault()
     //ingredients holds each strings in the array of ingredientsList
-    /**
-        1. user will put an ingredient and measurement
-        2. user will click the 'add ingredient' 
-        3. the ingredient will be displayed under the form and the text area will be cleared for another entry
-        4. Inside 'ingredients-container' next to the first ingredient there will be an x button if the user typed wrong and want to type again
-        5. user will enter the second ingredient, it will be displayed in 'ingredients-container', text area will be cleared for  a new entry and it will go on like that until the user finished adding ingredients 
-        6. when user clicked Add Recipe button the list of ingredients (array of strings) will be stored in state variable ingredientsList and sent (POST request) to the database.
+    /** BEFORE POST REQ.
+        1. user will put an ingredient, click the 'add ingredient',and the ingredient will be displayed @ DOM, text area will be cleared 
+        2. Add x button if the user typed wrong and want to type again
      */
   if (ingredients.trim() !== "") {
     setIngredientsList((currentList) => [...currentList, ingredients.trim()])
@@ -28,14 +24,13 @@ function handleIngredientsList(e){
     }
     
 }
-//render each ingredient inside ingredientsList and display @ JSX ul
+//render each ingredient inside ingredientsList 
 const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={index}>{ingredient}</li>)
 
   return (
     <section>
     <h3>Ingredients</h3>
-    <p>Add one ingredient at a time, please. </p>
-    <p>Add the ingredient and the measurement separated by comma, such as: <br/>Boneless chicken breast, 2lb <br/>Butter, 2 Tbsp</p>
+    <p>Please, add one ingredient at a time with the following format: <br/> Boneless chicken breast, 2lb <br /> butter, 2 Tbsp</p>
     <form onSubmit={handleIngredientsList}>
         <label>
           Ingredient:
@@ -54,7 +49,6 @@ const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={i
     <ul className='ingredients-container'>
       {ingredientsListMap}
     </ul>
-    <button className='submit-new-recipe' type="submit">Add Recipe</button>
     </section>
   )
 }

@@ -1,18 +1,22 @@
 body {
     background-color: rgb(251, 194, 82);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .navbardiv {
     display: flex;
     justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
 }
 
 .navbardiv ul {
     list-style-type: none;
+    margin: 40px 20px;
+    padding: 0px;
 }
 
 .navbardiv ul li{
-    /* display: inline-block; */
     padding-left: 25px;
 }
 
@@ -27,11 +31,21 @@ body {
     margin: 20px;
 }
 
-h1,
+.time-of-meal {
+    display: flex;
+    justify-content: center;
+}
+
 h2,
 h3 {
     color: rgb(220, 13, 9);
     justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: rgb(220, 13, 9);
+    text-decoration: underline;
     align-items: center;
 }
 
@@ -40,7 +54,6 @@ button {
     padding: 7px 10px;
     margin: 10px;
     background-color: rgb(240, 236, 207);
-    /* background-color: rgb(243, 243, 176); */
 }
 
 .new-recipe {
@@ -53,8 +66,11 @@ button {
     margin: 20px;
 }
 
-.submit-new-recipe {
-    float: right;
+.ingredients-container {
+    list-style-type: none;
+    border: 0.5px solid black;
+    width: 50%;
+    font-style: italic;
 }
 
 
@@ -73,6 +89,7 @@ label {
 .formboxes {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
 }
 
 .formArea {
