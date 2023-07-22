@@ -6,13 +6,13 @@ import LunchRecipes from './LunchRecipes';
 import DinnerRecipes from './DinnerRecipes';
 
 
-function MealPrepList({breakfastRecipes, setBreakfast}) {
+function MealPrepList({breakfastRecipes, setBreakfastRecipes}) {
 
 
 
 //display POST data, new rrecipe to DOM
 function displayNewRecipe (newRecipe) {
-  setBreakfast([...breakfastRecipes, newRecipe])
+  setBreakfastRecipes([...breakfastRecipes, newRecipe])
 }
 
 
@@ -21,7 +21,7 @@ function displayNewRecipe (newRecipe) {
       <MealsPrepNavbar />
       <Switch>
         <Route path="/breakfastRecipes">
-          <BreakfastRecipes breakfastRecipes={breakfastRecipes} setBreakfast={setBreakfast} displayNewRecipe={displayNewRecipe} />
+          <BreakfastRecipes breakfastRecipes={breakfastRecipes} setBreakfastRecipes={setBreakfastRecipes} displayNewRecipe={displayNewRecipe} />
         </Route>
         <Route path="/lunchRecipes">
           <LunchRecipes />
