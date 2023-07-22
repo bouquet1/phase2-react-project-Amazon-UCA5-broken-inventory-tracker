@@ -7,7 +7,7 @@ To start using React Router, we need to install react-router-dom:
 ```
 $ npm install
 $ npm install react-router-dom@5
-$ npm install
+$ npm start
 
 ```
 
@@ -44,3 +44,8 @@ https://www.forexfactory.com/attachment/image/1920501?d=1462368520
 Easy Recipes with 5 Ingredients or Less
 
 I created my own json file which I emjoy doing it a lot
+
+    I separeted AddIngredientsForm to have a clean data for ingredients recipe and avoid having many input boxes for this purpose. I also wanted user to see as a list below the input to easier manipulation. I wanna do it for the AddFormREcipe later.
+
+I copied the file to work on PATCH separately. I need to update review accordongly.
+RecipeDetails component as a child of AddRecipeForm will allow me to display the recipe details in a non-edit mode initially, and then switch to an edit mode when the user clicks the "Edit Recipe" button. This way, I can provide a seamless user experience for updating the recipe details.
