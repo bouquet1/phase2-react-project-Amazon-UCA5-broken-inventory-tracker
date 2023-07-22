@@ -47,5 +47,24 @@ I created my own json file which I emjoy doing it a lot
 
     I separeted AddIngredientsForm to have a clean data for ingredients recipe and avoid having many input boxes for this purpose. I also wanted user to see as a list below the input to easier manipulation. I wanna do it for the AddFormREcipe later.
 
-I copied the file to work on PATCH separately. I need to update review accordongly.
-RecipeDetails component as a child of AddRecipeForm will allow me to display the recipe details in a non-edit mode initially, and then switch to an edit mode when the user clicks the "Edit Recipe" button. This way, I can provide a seamless user experience for updating the recipe details.
+I copied the file to work on PATCH separately. I need to update review accordingly.
+
+    1. RecipeDetails component as a child of AddRecipeForm will allow me to display the recipe details in a non-edit mode initially, and then switch to an edit mode when the user clicks the "Edit Recipe" button. This way, I can provide a seamless user experience for updating the recipe details.
+
+    2. I need to activate update recipe button. How can I manipulate it in RecipeDetails? Callback from child to parent? I created selectedRecipe state variable to track which recipe the user wants to edit. then I wrote handleEditRecipe function and use it with onClick that with Edit Recipe button.
+
+    3.passed down the state, state setter and the handleEditRecipe function to addRecipe form.
+
+    4. I need to create controlled form in RecipeDetails so this component can deal with only editing the recipe.
+
+    5.It was challenging to figure out where and how to locate Recipe DEtails. When I import <RecipeDetails /> inside AddRecipe From it is located inside AddRecipe form which is a separate component just to be visible when Add Recipe button is clicked. So, I can't have <RecipeDetails /> inside AddRecipeForm as a child component.
+
+    When I added it inside Breakfast Recipes, I'm Recipe Details Component title is located at the end of all the single recipes that is rendered to display.
+
+    How can I implement <RecipeDEtails> in breakfast recipes so it can be under each single recipe when update recipe button is clicked? OK. I have added this code insoide rendering each recipe to dsiplay.
+
+    {/* Conditionally renders RecipeDetails under the selected recipe.Checks if the selectedRecipe state variable exists and if its id matches the id of the current breakfastRecipe. If true, the RecipeDetails comp will be rendered under the selected recipe */}
+    {selectedRecipe && selectedRecipe.id === breakfastRecipe.id && ( <RecipeDetails recipe={selectedRecipe} handleEditRecipe={handleEditRecipe} />)}
+
+    to test when I click Edit Recipe button I see title I'm Recipe Details Component under each recipe and also console logs the recipe obj and says I'm  selected for editing. Such an esciting moment!!!
+    Omg, it worked and this feels so good!!!!
