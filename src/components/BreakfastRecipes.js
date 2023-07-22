@@ -6,7 +6,6 @@ import { useState } from 'react';
 function BreakfastRecipes({breakfastRecipes, setBreakfastRecipes, displayNewRecipe}) {
 const [showForm, setShowForm] = useState(false);
 
-// const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nutritionFacts} = breakfastRecipes
 
 //DELETE fetch req 
 function handleDelete(id){
