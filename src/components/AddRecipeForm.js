@@ -65,7 +65,7 @@ function handleSubmit (e) {
           Recipe Name:
           <input type="text" 
           name="recipeName" 
-          value={formData.recipeName} 
+          value={formData.name} 
           placeholder="Enter a name"
           onChange={handleChange} />
         </label>
