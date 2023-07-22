@@ -6,20 +6,21 @@ import ShoppingList from './ShoppingList';
 
 function App() {
 const [page, setPage] = useState("PrepList");
-const [breakfastRecipes, setBreakfast] = useState([]);
+const [breakfastRecipes, setBreakfastRecipes] = useState([]);
+
 
 //fetch req breakfast recipes
 useEffect(() => {
   fetch("http://localhost:3000/breakfast")
   .then(r => r.json())
-  .then(breakfastRecipesData =>{setBreakfast(breakfastRecipesData);console.log(breakfastRecipesData)})
+  .then(breakfastRecipesData =>{setBreakfastRecipes(breakfastRecipesData);console.log(breakfastRecipesData)})
 
 }, [])
 
 return (
     <main>
     <Navbar onChangePage={setPage} />
-    {page === "PrepList" ? <MealPrepList setBreakfast={setBreakfast} breakfastRecipes={breakfastRecipes} /> : <ShoppingList /> }
+    {page === "PrepList" ? <MealPrepList setBreakfastRecipes={setBreakfastRecipes} breakfastRecipes={breakfastRecipes} /> : <ShoppingList /> }
     </main>
 );
 }

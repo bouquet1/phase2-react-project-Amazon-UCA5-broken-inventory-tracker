@@ -21,7 +21,7 @@ function displayNewRecipe (newRecipe) {
       <MealsPrepNavbar />
       <Switch>
         <Route path="/breakfastRecipes">
-          <BreakfastRecipes breakfastRecipes={breakfastRecipes} displayNewRecipe={displayNewRecipe} />
+          <BreakfastRecipes breakfastRecipes={breakfastRecipes} setBreakfast={setBreakfast} displayNewRecipe={displayNewRecipe} />
         </Route>
         <Route path="/lunchRecipes">
           <LunchRecipes />

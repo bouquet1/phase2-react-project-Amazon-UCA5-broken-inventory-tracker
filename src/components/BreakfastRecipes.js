@@ -3,10 +3,28 @@ import AddRecipeForm from './AddRecipeForm';
 import { useState } from 'react';
 
 
-function BreakfastRecipes({breakfastRecipes, displayNewRecipe}) {
+function BreakfastRecipes({breakfastRecipes, setBreakfastRecipes, displayNewRecipe}) {
 const [showForm, setShowForm] = useState(false);
 
+// const {id, name, totalPrepTime, directions1, directions2, ingredients, image, nutritionFacts} = breakfastRecipes
+
+//DELETE fetch req 
+function handleDelete(id){
+  fetch(`http://localhost:3000/breakfast/${id}`, {
+    method: "DELETE"
+  })
+  .then(r => r.json())
+  .then((recipe) => {
+    //updates the breakfastRecipes after delete
+    setBreakfastRecipes(prevRecipes => prevRecipes.filter(recipe => recipe.id !== id));
+  })
+  .catch(error => {console.log("Error deleting the recipe:", error);
+});
+}
+
+//displays the details of a single recipe
 const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
+  //also maps ingredients list
   const ingredientList = breakfastRecipe.ingredients.map(ingredient => {
     return (<li key={ingredient}>{ingredient}</li>)
   });
@@ -24,9 +42,10 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
     <button>Add to Meal Prep list</button>
     <button>Add Ingredients to Shopping List</button>
     <button>Update Recipe</button>
-    <button>Delete Recipe</button>
+    <button onClick={() => handleDelete(breakfastRecipe.id)}>Delete Recipe</button>
   </div>
 })
+
 
 function toggleForm(){
   setShowForm(showForm => !showForm)
