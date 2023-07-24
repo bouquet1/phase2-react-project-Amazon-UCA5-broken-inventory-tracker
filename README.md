@@ -28,7 +28,8 @@ $ npm install
 $ npm install react-router-dom@5
 $ npm start
 
-``
+```
+
 
 I'm thrilled to present to you my latest project, UR Meal Prep Assistant, a user-friendly web application built with React that aims to revolutionize the way we manage our recipes and plan our meals. In this presentation, I will take you through the key features and functionalities of this app.
 
@@ -60,5 +61,11 @@ My Learning Journey and Future Plans
 This project marks the completion of my React.js phase, and I am proud to have successfully implemented CRUD operations for effective data handling.
 I decided to undertake this relatively complex project out of personal interest, as I am passionate about meal prepping and organizing recipes.
 Although I have focused on Breakfast Recipes for now, I plan to continue building and enhancing UR Meal Prep Assistant. My goal is to develop a fully functional app that meets all my meal planning needs and helps others in their daily cooking routines.
+
+
 Thank you for your attention, and I'm excited to share more updates on UR Meal Prep Assistant in the future.
+
+Please use this link for the presentation of the project:
+
+
 
