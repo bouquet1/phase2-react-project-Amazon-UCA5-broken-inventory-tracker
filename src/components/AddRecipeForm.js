@@ -49,7 +49,7 @@ function handleSubmit (e) {
     //displays with callback 
     displayNewRecipe(newRecipeData); 
     //hide the form again by firing toggle after Post
-    //toggleForm()
+    toggleForm()
    }
     )
   
@@ -64,7 +64,7 @@ function handleSubmit (e) {
         <label>
           Recipe Name:
           <input type="text" 
-          name="recipeName" 
+          name="name" 
           value={formData.name} 
           placeholder="Enter a name"
           onChange={handleChange} />
