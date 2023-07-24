@@ -1,70 +1,64 @@
-# phase2-react-project-meal-prep-frontend
+# React Project showcases CRUD: UR Meal Prep Assistant
 
-Meal Prep Asistant Frontend Repo: https://github.com/bouquet1/phase2-react-project-meal-prep-frontend
 
-To start using React Router, we need to install react-router-dom:
+
+## Meal Prep Asistant Backend Repo: 
+https://github.com/bouquet1/phase2-react-project-meal-prep-backend
+
+## Setup
+
+In your VsCode terminal, enter the comments below in an order. 
+`npm install` should intstall the dependencies that is necessary to run the code.
+`npm install react-router-dom@5` makes sure that the the project uses router5 because React router-6 has different features that is not used in this project.
+`npm run dev` to run backend server in development mode. This command will use your localhost, probably port 3000.
+
+
+## Meal Prep Asistant Frontend Repo: 
+https://github.com/bouquet1/phase2-react-project-meal-prep-frontend
+
+## Setup
+
+In your VsCode terminal, enter the comments below in an order. 
+`npm install` should intstall the dependencies that is necessary to run the code.
+`npm install react-router-dom@5` makes sure that the the project uses router5 because React router-6 has different features that is not used in this project.
+`npm start` should use your local server to display the webpage.
 
 ```
 $ npm install
 $ npm install react-router-dom@5
 $ npm start
 
-```
+``
 
-Note: make sure to include @5 at the end of the install command to install React Router version 5 instead of version 6.
+I'm thrilled to present to you my latest project, UR Meal Prep Assistant, a user-friendly web application built with React that aims to revolutionize the way we manage our recipes and plan our meals. In this presentation, I will take you through the key features and functionalities of this app.
 
----
+# The Vision Behind UR Meal Prep Assistant
 
-phase2-react-project-meal-planner-assistant
-Meal Prep Asistant Backend Repo: https://github.com/bouquet1/phase2-react-project-meal-prep-backend
+UR Meal Prep Assistant is a digital replacement for the traditional methods of jotting down recipes on notebooks, notes, or draft papers. It streamlines the process of organizing recipes, creating shopping lists, and planning weekly meal preps.
+To achieve this, I used React to develop the front-end of the application, providing a seamless user experience.
 
-Running the Server Locally
-To run your server in development mode, run:
+## The App's Structure
 
-npm run dev
-While running in development mode, the server will re-load any time you make changes to the db.json file, so you can test our your seed data.
+UR Meal Prep Assistant is divided into two main sections: Recipe List and Shopping List.
+The Recipe List is further categorized into three sections: Breakfast Recipes, Lunch Recipes, and Dinner Recipes. This categorization helps users easily find and manage recipes based on the meal type.
 
-While your server is running, you can make requests to http://localhost:3000. Check it out in the browser to make sure your server works!
+## Key Features of Recipe List
 
----
+Within each meal page, users can find an "Add a New Recipe" button to easily add a new recipe to the specific meal section.
+Every recipe in the list comes with four convenient buttons to manage the recipe efficiently:
+"Add to Meal Prep List" allows users to add the recipe to their weekly meal prep plan.
+"Add Ingredients to Shopping List" instantly adds the recipe's ingredients to the shopping list.
+"Edit Recipe" grants users the ability to modify any details of the recipe to suit their preferences.
+"Delete" offers an easy way to remove any unwanted recipes from the app.
 
-npm install react-router-dom
+## The Back-End and Data Management
 
----
+To complement the React front-end, I also developed a RESTful API in another VS code file and utilized JSON files to store recipe data.
+This back-end infrastructure ensures smooth data management and retrieval, making the app more efficient and reliable.
+My Learning Journey and Future Plans
 
-handle the GET recipes - useState recipes to fetch the recipes
+This project marks the completion of my React.js phase, and I am proud to have successfully implemented CRUD operations for effective data handling.
+I decided to undertake this relatively complex project out of personal interest, as I am passionate about meal prepping and organizing recipes.
+Although I have focused on Breakfast Recipes for now, I plan to continue building and enhancing UR Meal Prep Assistant. My goal is to develop a fully functional app that meets all my meal planning needs and helps others in their daily cooking routines.
+Thank you for your attention, and I'm excited to share more updates on UR Meal Prep Assistant in the future.
 
-to meet the deadline I did MVP and I will continue to built my app and make it fucntional, aesthetic, and ready before graduation hoping to impress my new employee.
-
-placeholder image:
-https://www.forexfactory.com/thread/536931-need4speed-scalping?page=39
-
-https://www.forexfactory.com/attachment/image/1920501?d=1462368520
-
-Easy Recipes with 5 Ingredients or Less
-
-I created my own json file which I emjoy doing it a lot
-
-    I separeted AddIngredientsForm to have a clean data for ingredients recipe and avoid having many input boxes for this purpose. I also wanted user to see as a list below the input to easier manipulation. I wanna do it for the AddFormREcipe later.
-
-I copied the file to work on PATCH separately. I need to update review accordingly.
-
-    1. RecipeDetails component as a child of AddRecipeForm will allow me to display the recipe details in a non-edit mode initially, and then switch to an edit mode when the user clicks the "Edit Recipe" button. This way, I can provide a seamless user experience for updating the recipe details.
-
-    2. I need to activate update recipe button. How can I manipulate it in RecipeDetails? Callback from child to parent? I created selectedRecipe state variable to track which recipe the user wants to edit. then I wrote handleEditRecipe function and use it with onClick that with Edit Recipe button.
-
-    3.passed down the state, state setter and the handleEditRecipe function to addRecipe form.
-
-    4. I need to create controlled form in RecipeDetails so this component can deal with only editing the recipe.
-
-    5.It was challenging to figure out where and how to locate Recipe DEtails. When I import <RecipeDetails /> inside AddRecipe From it is located inside AddRecipe form which is a separate component just to be visible when Add Recipe button is clicked. So, I can't have <RecipeDetails /> inside AddRecipeForm as a child component.
-
-    When I added it inside Breakfast Recipes, I'm Recipe Details Component title is located at the end of all the single recipes that is rendered to display.
-
-    How can I implement <RecipeDEtails> in breakfast recipes so it can be under each single recipe when update recipe button is clicked? OK. I have added this code insoide rendering each recipe to dsiplay.
-
-    {/* Conditionally renders RecipeDetails under the selected recipe.Checks if the selectedRecipe state variable exists and if its id matches the id of the current breakfastRecipe. If true, the RecipeDetails comp will be rendered under the selected recipe */}
-    {selectedRecipe && selectedRecipe.id === breakfastRecipe.id && ( <RecipeDetails recipe={selectedRecipe} handleEditRecipe={handleEditRecipe} />)}
-
-    to test when I click Edit Recipe button I see title I'm Recipe Details Component under each recipe and also console logs the recipe obj and says I'm  selected for editing. Such an esciting moment!!!
-    Omg, it worked and this feels so good!!!!
