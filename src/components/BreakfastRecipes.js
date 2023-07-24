@@ -1,11 +1,13 @@
 import React from 'react';
 import AddRecipeForm from './AddRecipeForm';
 import { useState } from 'react';
+import RecipeDetails from './RecipeDetails'
 
 
 function BreakfastRecipes({breakfastRecipes, setBreakfastRecipes, displayNewRecipe}) {
 const [showForm, setShowForm] = useState(false);
-
+//keeps track of the recipe user wants to edit
+const [selectedRecipe, setSelectedRecipe] = useState(null);
 
 //DELETE fetch req 
 function handleDelete(id){
@@ -20,6 +22,13 @@ function handleDelete(id){
   .catch(error => {console.log("Error deleting the recipe:", error);
 });
 }
+
+//handles selecting a recipe for editing
+function handleEditRecipe (recipe) {
+  setSelectedRecipe(recipe);
+  console.log("I'm selected for editing:", recipe);
+}
+
 
 //displays the details of a single recipe
 const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
@@ -40,8 +49,10 @@ const breakfastRecipesMap = breakfastRecipes.map((breakfastRecipe, index) => {
     <p>{breakfastRecipe.nutritionFacts}</p>
     <button>Add to Meal Prep list</button>
     <button>Add Ingredients to Shopping List</button>
-    <button>Update Recipe</button>
+    <button onClick={() => handleEditRecipe(breakfastRecipe)}>Edit Recipe</button>
     <button onClick={() => handleDelete(breakfastRecipe.id)}>Delete Recipe</button>
+    {/* Conditionally renders RecipeDetails under the selected recipe.Checks if the selectedRecipe state variable exists and if its id matches the id of the current breakfastRecipe. If true, the RecipeDetails comp will be rendered under the selected recipe */}
+    {selectedRecipe && selectedRecipe.id === breakfastRecipe.id && ( <RecipeDetails recipe={selectedRecipe} handleEditRecipe={handleEditRecipe} />)}
   </div>
 })
 

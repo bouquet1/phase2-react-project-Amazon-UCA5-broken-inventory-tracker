@@ -6,7 +6,7 @@ import AddIngredientsForm from './AddIngredientsForm';
 
 function AddRecipeForm({displayNewRecipe, toggleForm}) {
 const [formData, setFormData] = useState({
-    recipeName: "",
+    name: "",
     totalPrepTime: "",
     directions1: "",
     directions2: "",
