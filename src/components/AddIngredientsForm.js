@@ -19,7 +19,6 @@ function handleIngredientsList(e){
     // Calls the updateIngredientsList to update the parent's state
     updateIngredientsList([...ingredientsList, ingredients.trim()]);
     }
-    
 }
 
 
