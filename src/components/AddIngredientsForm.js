@@ -16,10 +16,12 @@ function handleIngredientsList(e){
   if (ingredients.trim() !== "") {
     setIngredientsList((currentList) => [...currentList, ingredients.trim()])
     setIngredients("") //clears the input field for next ingredient
-    }
     // Calls the updateIngredientsList to update the parent's state
-    updateIngredientsList(ingredientsList);
+    updateIngredientsList([...ingredientsList, ingredients.trim()]);
+    }
+    
 }
+
 
 
 //render each ingredient inside ingredientsList 
@@ -29,7 +31,7 @@ const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={i
     <section>
     <h3>Ingredients</h3>
     <p>Please, add one ingredient at a time with the following format: <br/> Boneless chicken breast, 2lb <br /> butter, 2 Tbsp</p>
-    <form onSubmit={handleIngredientsList}>
+    {/* <form onSubmit={handleIngredientsList}> */}
         <label>
           Ingredient:
           <input type="text" 
@@ -41,9 +43,10 @@ const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={i
         <label className='submit_ingredient'>
           <input type="submit" 
           name="submit" 
-          value="Add Ingredient"/>
+          value="Add Ingredient"
+          onClick={handleIngredientsList} />
         </label>
-    </form>
+    {/* </form> */}
     <ul className='ingredients-container'>
       {ingredientsListMap}
     </ul>

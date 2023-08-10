@@ -77,6 +77,7 @@ function handleSubmit (e) {
           placeholder="e.g 15 min"
           onChange={handleChange} />
         </label>
+          <AddIngredientsForm updateIngredientsList={updateIngredientsList} />
         <label>
           Directions1:
           <input type="text" 
@@ -112,7 +113,6 @@ function handleSubmit (e) {
         <button className='submit-new-recipe' type="submit" onSubmit={handleSubmit} >Add Recipe</button>
       </form>
       {/* can't have form inside another form */}
-      <AddIngredientsForm updateIngredientsList={updateIngredientsList} />
       <p>Done? <br/> Save it to your recipe list simply clicking the add button below.</p>
     </div>
     </section>
