@@ -31,22 +31,20 @@ const ingredientsListMap = ingredientsList.map((ingredient, index) => <li key={i
     <section>
     <h3>Ingredients</h3>
     <p>Please, add one ingredient at a time with the following format: <br/> Boneless chicken breast, 2lb <br /> butter, 2 Tbsp</p>
-    {/* <form onSubmit={handleIngredientsList}> */}
-        <label>
-          Ingredient:
-          <input type="text" 
+    <label>
+    Ingredient:
+      <input type="text" 
           name="ingredients" 
           value={ingredients} 
           placeholder="Ingredient, Measurement"
-          onChange={handleChange} />
-        </label>
-        <label className='submit_ingredient'>
-          <input type="submit" 
-          name="submit" 
-          value="Add Ingredient"
-          onClick={handleIngredientsList} />
-        </label>
-    {/* </form> */}
+      onChange={handleChange} />
+    </label>
+    <label className='submit_ingredient'>
+      <input type="submit" 
+      name="submit" 
+      value="Add Ingredient"
+      onClick={handleIngredientsList} />
+    </label>
     <ul className='ingredients-container'>
       {ingredientsListMap}
     </ul>
